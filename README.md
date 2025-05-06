@@ -5,14 +5,16 @@ This project defines a Virtual Private Cloud (VPC) infrastructure using Terrafor
 
 ## Project Structure
 
+*   `env/sandbox`: Contains the Terraform configuration for deploying the VPC module in a sandbox environment.
+    *   `main.tf`: Main terraform file.
+    *   `outputs.tf`: Defines the output variables for the sandbox.
+    *   `provider.tf`: Configures the Terraform provider (e.g., AWS).
+    *   `terraform.tfvars`: Defines the values for the variables used in the sandbox.
+    *   `variables.tf`: Defines the variables for the sandbox.
 *   `modules/vpc`: Contains the core Terraform module for creating the VPC.
     *   `main.tf`: Defines the VPC resources, including subnets, internet gateway, NAT gateway, and route tables.
     *   `variables.tf`: Defines the input variables for the VPC module.
     *   `outputs.tf`: Defines the output variables for the VPC module.
-*   `env/sandbox`: Contains the Terraform configuration for deploying the VPC module in a sandbox environment.
-    *   `vpc.tf`: Defines the variables and module call for the VPC module in the sandbox.
-    *   `terraform.tfvars`: Defines the values for the variables used in the sandbox.
-    *   `provider.tf`: Configures the Terraform provider (e.g., AWS).
 
 ## Functionality
 
@@ -29,12 +31,11 @@ The VPC module creates the following resources:
 
 To deploy the VPC in the sandbox environment:
 
-1.  Configure the AWS provider in `sandbox/provider.tf` with your credentials.
-2.  Define the desired variable values in `sandbox/terraform.tfvars`.
-3.  Run `terraform init` to initialize the Terraform project.
-4.  Run `terraform plan` to review the changes.
-5.  Run `terraform apply` to create the resources.
+1.  Configure the AWS provider in `env/sandbox/provider.tf` with your credentials.
+2.  Define the desired variable values in `env/sandbox/terraform.tfvars`.
+3.  Change current directory to `env/sandbox` folder by running: `cd env/sandbox` command
+4.  Run `terraform init` to initialize the Terraform project.
+5.  Run `terraform plan -var-file="terraform.tfvars"` to review the changes.
+6.  Run `terraform apply -var-file="terraform.tfvars"` to create the resources.
+6.  Run `terraform destroy -var-file="terraform.tfvars"` to destroy the resources.
 
-## Note
-
-The `private_subnets` resource in `modules/vpc/main.tf` is not fully implemented and requires further configuration.
