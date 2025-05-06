@@ -1,7 +1,12 @@
-
 # Terraform VPC Project
 
 This project defines a Virtual Private Cloud (VPC) infrastructure using Terraform. It consists of a VPC module and a sandbox environment for testing and deployment.
+
+## Prerequisites
+
+Before you can use this project, you need to have the following tools installed on your machine:
+
+*   [Terraform](https://www.terraform.io/downloads.html) - You need to have Terraform installed to provision the infrastructure.
 
 ## Project Structure
 
