@@ -9,7 +9,7 @@ This project defines a Virtual Private Cloud (VPC) infrastructure using Terrafor
     *   `main.tf`: Defines the VPC resources, including subnets, internet gateway, NAT gateway, and route tables.
     *   `variables.tf`: Defines the input variables for the VPC module.
     *   `outputs.tf`: Defines the output variables for the VPC module.
-*   `sandbox`: Contains the Terraform configuration for deploying the VPC module in a sandbox environment.
+*   `env/sandbox`: Contains the Terraform configuration for deploying the VPC module in a sandbox environment.
     *   `vpc.tf`: Defines the variables and module call for the VPC module in the sandbox.
     *   `terraform.tfvars`: Defines the values for the variables used in the sandbox.
     *   `provider.tf`: Configures the Terraform provider (e.g., AWS).
