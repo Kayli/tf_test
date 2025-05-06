@@ -15,6 +15,7 @@ This project defines a Virtual Private Cloud (VPC) infrastructure using Terrafor
     *   `main.tf`: Defines the VPC resources, including subnets, internet gateway, NAT gateway, and route tables.
     *   `variables.tf`: Defines the input variables for the VPC module.
     *   `outputs.tf`: Defines the output variables for the VPC module.
+*   `todo.md`: list of improvements to implement in nearest future
 
 ## Functionality
 
