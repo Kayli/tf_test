@@ -1,0 +1,33 @@
+# Terraform files
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+override.tf
+override.tf.json
+
+# Provider plugins
+*.terraformrc
+terraform-provider-*
+
+# Crash reports
+crash.log
+crash.*.log
+
+# Ignore folder containing files managed by terraform.
+.terraform
+
+# Local variables file
+terraform.tfvars.json
+terraform.tfvars
+
+# Temporary files
+*~
+#*
+
+# IDE
+.idea/
+*.iml
+
+# OS
+.DS_Store
