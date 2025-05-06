@@ -14,7 +14,7 @@
    - **Current Issue**: The `count` parameter is used to create NAT EIPs for each subnet, which can become fragile when the list of subnets changes.
    - **Suggested Change**: Use `for_each` for `aws_eip.nat_eip` to map each EIP to a specific public subnet.
    - **Reasoning**:
-     - **Clear Mapping**: This ensures each EIP is directly associated with a public subnet, reducing ambiguity.
+     - **Clear Mapping**: This ensures each EIP is directly associated with a specific public subnet, reducing ambiguity.
      - **Flexibility**: Using `for_each` improves maintainability as the number of subnets grows or changes.
 
 ### **Switch from `count` to `for_each` for NAT Gateways**
@@ -80,3 +80,20 @@
 
 ---
 
+### **CI/CD and Automation**
+
+### **Integrate CI/CD Pipeline**
+    - Set up a CI/CD pipeline (e.g., using GitHub Actions, GitLab CI, CircleCI) to automate infrastructure changes. This includes:
+        - Running `terraform init`, `terraform plan`, and `terraform apply` on pull requests and merges to the main branch.
+        - Implementing automated testing to validate infrastructure changes using Terratest or similar tools.
+        - Automating deployments to different environments (development, staging, production).
+
+### **Implement Automated Linting and Formatting**
+    - Integrate a Terraform linter (e.g., `terraform fmt`, `tflint`) to automatically check code style and best practices.
+    - Add a pre-commit hook to automatically format Terraform code before committing, ensuring consistent code style.
+
+### **Enhance Security Scanning**
+    - Incorporate security scanning tools (e.g., `tfsec`, `checkov`) into the CI/CD pipeline to identify potential security vulnerabilities in the Terraform code. This will help ensure that the infrastructure is secure and compliant with security policies.
+
+### **Add Input Validation**
+    - Implement validation rules for input variables to ensure that they meet the required constraints. This will help prevent errors and ensure that the infrastructure is configured correctly.
