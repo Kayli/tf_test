@@ -28,7 +28,7 @@ The VPC module creates the following resources:
 
 *   VPC with specified CIDR block
 *   Public subnets in multiple availability zones
-*   Private subnets (currently incomplete implementation)
+*   Private subnets
 *   Internet Gateway for public subnet access to the internet
 *   NAT Gateway for private subnet access to the internet
 *   Route tables for public and private subnets
